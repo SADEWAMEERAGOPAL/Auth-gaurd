@@ -1,0 +1,36 @@
+<div class="card" *ngIf="productsObj; else Noproducts">
+    <div class="card-body">
+        <h3>Product Details</h3>
+        <hr>
+        <div class="row">
+            <div class="col-md-6">
+                <p><strong>Product Name:</strong>{{productsObj.name}}</p>
+                <p><strong>Product Price:</strong>{{productsObj.price}}</p>
+                <p><strong>Product Description:</strong>{{productsObj.description}}</p>
+            </div>
+
+            <div class="col-md-6">
+                <img [src]="productsObj.image" alt="" class="img-fluid">
+            </div>
+
+          <div class="d-flex  justify-content-between align-items-center">
+              <button mat-raised-button color="primary" routerLink="edit">
+              <mat-icon>edit</mat-icon>
+              </button> 
+
+        <button mat-raised-button color="warn" (click)="deleteproduct()">
+          <mat-icon>delete</mat-icon>
+        </button> 
+          </div>
+        
+        </div>
+     
+    </div>
+</div>
+
+<ng-template #Noproducts>
+    <div class="alert alert-danger">
+        No products found
+    </div>
+
+</ng-template>

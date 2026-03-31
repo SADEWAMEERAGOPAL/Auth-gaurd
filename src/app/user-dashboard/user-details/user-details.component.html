@@ -1,0 +1,23 @@
+
+<mat-card class="example-card" >
+  <mat-card-title-group>
+    <mat-card-title><strong>Name:</strong>{{userObj.userName}}</mat-card-title>
+    <mat-card-subtitle><strong>User Role:</strong> {{userObj.userRole}}</mat-card-subtitle>
+    <img mat-card-lg-image [src]="userObj.imageUrl" >
+  </mat-card-title-group>
+
+   <strong>Status:</strong>
+  <span class="badge"
+      [ngClass]="userObj.isActive ? 'bg-success' : 'bg-danger'">
+  {{ userObj.isActive ? 'Active' : 'Inactive' }}
+</span>
+  <mat-card-content>
+    <strong>Profile Description:</strong> {{userObj.profileDescription}}
+  <strong>Experience:</strong> <span>{{userObj.experienceYears}} </span>
+  </mat-card-content>
+
+  <mat-card-actions>
+    <button mat-raised-button color="primary" routerLink="EditUser">Edit</button>
+    <button mat-raised-button color="primary" >Delete</button>
+  </mat-card-actions>
+</mat-card>

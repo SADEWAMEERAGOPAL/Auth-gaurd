@@ -1,0 +1,67 @@
+
+<div class="container-fluid">
+      <div class="row">
+  <div class="col-md-6 offset-md-3  mt-5">
+    <div class="card">
+      <div class="card-body">
+        <form *ngIf="!LoginMode" [formGroup]="SignUpForm" (ngSubmit)="Signup()">
+          <div class="form-group">
+            <label for="email">email*</label>
+            <input type="text" class="form-control" formControlName="email" />
+          </div>
+
+          <div class="form-group">
+            <label for="password">password*</label>
+            <input
+              type="text"
+              class="form-control"
+              formControlName="password"
+            />
+          </div>
+
+          <div class="form-group">
+            <label for="userRole">userRole*</label>
+            <select
+              type="text"
+              class="form-control"
+              formControlName="userRole"
+            >
+            <option value="admin">admin</option>
+            <option value="Buyer">Buyer</option>
+            <option value="seller">admin</option>
+        </select>
+          </div>
+
+          <button class="btn btn-outline-primary d-flex justify-content-end ">SIGN UP</button>
+
+          <br>
+           <a href="#"  (click)="LoginMode=true">Already have an account? Log In</a>
+        </form>
+        
+
+         <form *ngIf="LoginMode" [formGroup]="LoginForm" (ngSubmit)="LogIn()">
+          <div class="form-group">
+            <label for="email">Email*</label>
+            <input type="text" class="form-control" formControlName="email">
+          </div>
+
+          <div class="form-group">
+            <label for="password">Password*</label>
+            <input type="text" class="form-control" formControlName="password">
+          </div>
+
+          <button class="btn btn-outline-primary">Log In</button>
+          <br>
+
+            <a routerLink="" (click)="LoginMode=false">Create New  Account</a>
+         </form>
+      </div>
+    </div>
+  </div>
+
+  
+</div>
+</div>
+
+
+

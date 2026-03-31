@@ -1,0 +1,66 @@
+<div class="card">
+    <div class="card-body">
+        <h2>{{IsInEditMode ? 'Update Product' : 'Add Product'}}</h2>
+        <form [formGroup]="productForm" (ngSubmit)="OnAddProduct()">
+            <div class="form-group">
+                <label for="name">Product-name <sup>*</sup></label>
+                <input type="text" class="form-control" formControlName="name">
+            </div>
+
+              <div class="form-group">
+                <label for="canReturn">Can Return<sup>*</sup></label>
+                <select type="text" class="form-control" formControlName="canReturn">
+                    <option value="">Select Option</option>
+                    <option value="true">Yes</option>
+                    <option value="false">No</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="price">Product-price<sup>*</sup></label>
+                <input type="text" class="form-control" formControlName="price">
+            </div>
+            <div class="form-group">
+                <label for="description">Product-description <sup>*</sup></label>
+                <textarea rows="4" class="form-control" formControlName="description"></textarea>
+            </div>
+            <div class="form-group">
+                <label for="rating">Product-rating <sup>*</sup></label>
+                <select class="form-control" formControlName="rating">
+                    <option value="">Select Rating</option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="image">Product-image <sup>*</sup></label>
+                <input type="text" class="form-control" formControlName="image">
+            </div>
+
+            <div class="form-group">
+                <label for="category">Product-category <sup>*</sup></label>
+                <select  class="form-control" formControlName="category">
+                    <option value="">Select Category</option>
+                    <option value="Electronics">Electronics</option>
+                    <option value="Clothing">Clothing</option>
+                    <option value="Home & Kitchen">Home & Kitchen</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="stock">Stock <sup>*</sup></label>
+                <select  id="" class="form-control" formControlName="stock">
+                    <option value="">Select Stock</option>
+                    <option value="In Stock">In Stock</option>
+                    <option value="Out of Stock">Out of Stock</option>
+                </select>
+            </div>
+
+            <button *ngIf="!IsInEditMode" mat-raised-button color="primary">Submit</button>
+            <button *ngIf="IsInEditMode" mat-raised-button color="primary" type="button" (click)="OnUpdate()">Update</button>
+        </form>
+    </div>
+</div>
